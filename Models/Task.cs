@@ -2,7 +2,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-enum TaskState
+enum TaskStatus
 {
     Created,
     Started,
@@ -19,5 +19,5 @@ class Task
     public DateTime Begin { get; set; }
     public DateTime End { get; set; }
 
-    public TaskState State {get; set;}
+    public TaskStatus Status {get; set;}
 }
