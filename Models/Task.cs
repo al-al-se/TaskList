@@ -11,7 +11,7 @@ enum TaskStatus
 }
 
 [Index("Id", IsUnique =true)]
-class Task
+class SheduledTask
 {
     [Key]
     public string Id { get; set; }
