@@ -31,4 +31,26 @@ class TaskContext : DbContext, ITaskRepository
                  i.Status != TaskStatus.Finshed && i.End < t).ToListAsync();
         return r;
     }
+
+    public  async Task<SheduledTask> Create(string name, DateTime begin, DateTime end)
+    {
+        var n = new SheduledTask(){
+            Id = System.Guid.NewGuid().ToString(),
+            Name = name,
+            Begin = begin,
+            End = end,
+            Status = TaskStatus.Created
+        };
+        await Tasks.AddAsync(n);
+        await SaveChangesAsync();
+        return n;
+    }
+
+    public async Task<SheduledTask> SetFinished(string id)
+    {
+        var t = await Tasks.FirstAsync(i => i.Id == id);
+        t.Status = TaskStatus.Finshed;
+        await SaveChangesAsync();
+        return t;
+    }
 }
