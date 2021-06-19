@@ -26,9 +26,10 @@ public class TaskContext : DbContext, ITaskRepository
     }
 
     public  async Task<IEnumerable<SheduledTask>> GetUnfineshedTasksEndingBefore(DateTime t)
-    {
+    {      
         var r = await Tasks.Where(i =>
-                 i.Status != TaskStatus.Finshed && i.End < t).ToListAsync();
+                 i.Status != TaskStatus.Finshed && i.End < t)
+                 .ToListAsync();
         return r;
     }
 
