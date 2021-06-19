@@ -2,7 +2,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-enum TaskStatus
+public enum TaskStatus
 {
     Created,
     Started,
@@ -11,7 +11,7 @@ enum TaskStatus
 }
 
 [Index("Id", IsUnique =true)]
-class SheduledTask
+public class SheduledTask
 {
     [Key]
     public string Id { get; set; }

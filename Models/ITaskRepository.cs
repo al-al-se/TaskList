@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-interface ITaskRepository
+
+public interface ITaskRepository
 {
     Task<IEnumerable<SheduledTask>> GetAll();
 

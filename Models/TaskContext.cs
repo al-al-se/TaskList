@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
  
-class TaskContext : DbContext, ITaskRepository
+public class TaskContext : DbContext, ITaskRepository
 {
     private DbSet<SheduledTask> Tasks { get; set; }
 

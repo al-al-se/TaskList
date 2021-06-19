@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("[controller]")]
-class TaskController : ControllerBase
+public class TaskController : ControllerBase
 {
     private readonly ITaskRepository _repository;
 
